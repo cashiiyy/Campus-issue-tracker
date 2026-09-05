@@ -3,11 +3,25 @@ import "./globals.css";
 import { AuthProvider } from "@/lib/auth";
 import { ReactQueryProvider } from "@/lib/query-provider";
 import { Navbar } from "@/components/layout/Navbar";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Campus Issue Tracker | University Facilities & Incident Management",
   description:
     "Report, track, and manage campus facilities, electrical, internet, and infrastructure issues seamlessly.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -16,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+    <html lang="en" className={inter.variable}>
+      <body className="antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans">
         <ReactQueryProvider>
           <AuthProvider>
             <Navbar />
@@ -26,7 +40,7 @@ export default function RootLayout({
             </main>
             <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
               <div className="max-w-7xl mx-auto px-4">
-                Campus Issue Tracker &bull; University Infrastructure & Facilities Management &bull; Production Grade System
+                &copy; {new Date().getFullYear()} Campus Issue Tracker &bull; University Infrastructure &amp; Facilities Management
               </div>
             </footer>
           </AuthProvider>

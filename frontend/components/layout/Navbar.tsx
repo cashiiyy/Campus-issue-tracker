@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import {
-  AlertTriangle,
   LayoutDashboard,
   ListOrdered,
   PlusCircle,
@@ -13,7 +12,7 @@ import {
   LogOut,
   Menu,
   X,
-  User as UserIcon,
+  MapPin,
 } from "lucide-react";
 
 export function Navbar() {
@@ -40,13 +39,13 @@ export function Navbar() {
           {/* Brand Logo */}
           <div className="flex items-center">
             <Link href={user ? (user.role === "ADMIN" ? "/admin" : "/dashboard") : "/"} className="flex items-center space-x-2.5">
-              <div className="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center text-white shadow-sm">
-                <AlertTriangle className="w-5 h-5" />
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center text-white shadow-sm">
+                <MapPin className="w-5 h-5" />
               </div>
               <div>
                 <span className="text-lg font-bold tracking-tight text-slate-900">Campus Tracker</span>
-                <span className="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
-                  Facilities & Services
+                <span className="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100">
+                  Issue Portal
                 </span>
               </div>
             </Link>
