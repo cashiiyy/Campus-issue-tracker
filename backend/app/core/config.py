@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     VERSION: str = "1.0.0"
     API_V1_PREFIX: str = "/api/v1"
     ENVIRONMENT: str = "development"
+    PORT: int = 8001
 
     # Database
     DATABASE_URL: str = "sqlite:///./campus_tracker.db"

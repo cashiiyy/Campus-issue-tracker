@@ -103,9 +103,9 @@ The application is pre-seeded with realistic campus data and demo accounts:
 
 4. **Access the application**:
    - **Frontend Application**: [http://localhost:3000](http://localhost:3000)
-   - **Backend API**: [http://localhost:8000](http://localhost:8000)
-   - **Interactive API Docs (Swagger)**: [http://localhost:8000/docs](http://localhost:8000/docs)
-   - **API Redoc**: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+   - **Backend API**: [http://localhost:8001](http://localhost:8001)
+   - **Interactive API Docs (Swagger)**: [http://localhost:8001/docs](http://localhost:8001/docs)
+   - **API Redoc**: [http://localhost:8001/redoc](http://localhost:8001/redoc)
 
 ---
 
@@ -127,7 +127,7 @@ alembic upgrade head
 python -m app.seed
 
 # Start FastAPI server
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
 ```
 
 #### 2. Frontend Setup:
