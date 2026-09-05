@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
       <body className="antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans">
         <ReactQueryProvider>
           <AuthProvider>
