@@ -107,6 +107,25 @@ async def generic_exception_handler(request: Request, exc: Exception):
     )
 
 
+# Root endpoint
+@app.get(
+    "/",
+    tags=["System"],
+    summary="Root API entrypoint",
+    description="Provides quick system info and links to documentation.",
+)
+def root():
+    return {
+        "status": "online",
+        "project": settings.PROJECT_NAME,
+        "version": settings.VERSION,
+        "docs": "/docs",
+        "redoc": "/redoc",
+        "health": "/health",
+        "api_v1": settings.API_V1_PREFIX,
+    }
+
+
 # Health check endpoint
 @app.get(
     "/health",
